@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+
+:root {
+  --brand-blue: #4285F4;
+  --brand-carbon: #41464A;
+  --brand-platinum: #7F8289;
+  --brand-light-gray: #B4B4BE;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3366CC;
+}
+
+/* Road Line Animation */
+@keyframes roadLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.road-line-animation {
+  animation: roadLine 2s infinite linear;
+}
+
+/* Diagonal Background Pattern */
+.diagonal-pattern {
+  background: linear-gradient(
+    45deg,
+    rgba(66, 133, 244, 0.1) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(66, 133, 244, 0.1) 50%,
+    rgba(66, 133, 244, 0.1) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #4285F4 0%, #1a73e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Divider */
+.section-divider {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    #4285F4 25%, 
+    #4285F4 75%, 
+    transparent 100%
+  );
+}
+
+/* Animated Road Lines */
+.road-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.road-lines::before,
+.road-lines::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  background: white;
+  animation: roadLineMove 3s infinite linear;
+}
+
+.road-lines::before {
+  top: 50%;
+  left: -100px;
+}
+
+.road-lines::after {
+  top: 50%;
+  left: -100px;
+  animation-delay: 1.5s;
+}
+
+@keyframes roadLineMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply bg-brand-blue text-white px-8 py-3 rounded-lg font-semibold 
+         transition-all duration-300 hover:bg-blue-600 hover:shadow-lg 
+         hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-lg 
+         font-semibold transition-all duration-300 hover:bg-brand-blue 
+         hover:text-white hover:shadow-lg hover:scale-105 active:scale-95;
+}
+
+/* Card Styles */
+.service-card {
+  @apply bg-white rounded-2xl p-8 shadow-lg hover-lift relative overflow-hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #4285F4, transparent);
+  transition: left 0.5s ease;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+/* Hero Overlay */
+.hero-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(66, 133, 244, 0.3) 100%
+  );
+}
+
+/* Parallax Effect */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Page Transition */
+.page-transition {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Diagonal Section */
+.diagonal-section {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .diagonal-section {
+    clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 98%);
+    padding: 60px 0;
+  }
+}
