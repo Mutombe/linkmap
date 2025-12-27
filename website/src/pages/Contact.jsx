@@ -12,6 +12,7 @@ import {
   FaArrowRight,
   FaBuilding
 } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -144,7 +145,7 @@ const Contact = () => {
 
               {/* Socials */}
               <div className="flex gap-4 justify-center">
-                 {[FaFacebookF, FaTwitter, FaLinkedinIn].map((Icon, i) => (
+                 {[FaFacebookF, FaXTwitter, FaLinkedinIn].map((Icon, i) => (
                     <a key={i} href="#" className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 transition-all shadow-md">
                       <Icon />
                     </a>

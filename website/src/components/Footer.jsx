@@ -13,6 +13,7 @@ import {
   FaHardHat
 } from 'react-icons/fa';
 import logo from '../assets/cropped-tg3.jpg';
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -63,7 +64,7 @@ const Footer = () => {
             </p>
 
             <div className="flex gap-4">
-              {[FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram].map((Icon, i) => (
+              {[FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram].map((Icon, i) => (
                 <a 
                   key={i} 
                   href="#" 
