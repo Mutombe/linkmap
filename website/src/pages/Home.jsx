@@ -86,7 +86,7 @@ const Home = () => {
 
         {/* MOBILE OVERLAY (The "Light BG" effect) */}
         {/* This fades the images out on mobile so text is readable */}
-        <div className="absolute inset-0 bg-white/20 backdrop-blur-sm lg:hidden z-0" />
+        <div className="absolute inset-0 bg-white/5 lg:hidden z-0" />
 
         {/* CONTENT LAYER */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-20 lg:pt-0">
